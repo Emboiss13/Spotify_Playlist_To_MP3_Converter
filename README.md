@@ -48,7 +48,7 @@ Download FFmpeg from https://ffmpeg.org/download.html and add it to your system 
 <br>
 
 **Changes you MUST make to the code**: 
->**IMPORTANT❗️:** _Change `CLIENT_ID = 'id'` and `CLIENT_SECRET = 'secret'` (lines `10` & `11`) in the authentication section, to match your Spotify Developer Credentials._
+>**IMPORTANT❗️:** _Change `CLIENT_ID = 'id'` and `CLIENT_SECRET = 'secret'` in the 🔓 authentication section, to match your Spotify Developer Credentials._
 
 <br>
 
