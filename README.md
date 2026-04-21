@@ -8,7 +8,7 @@ I was manually downloading my Spotify playlists into an MP3 player, and it was g
 - **SpotifyPlaylistReader.py**  _→ Script to extract songs from Spotify and download them as MP3s_
 - **MP3TagEditor.py**           _→ Script to edit tags (album, artist, genre) of MP3 files_
 
-### 🔧 Prerequisites
+### ⬇️ Prerequisites
 Make sure you have these installed:
 
 1. Python 3.9+
@@ -23,7 +23,7 @@ Download FFmpeg from https://ffmpeg.org/download.html and add it to your system 
 
 
 ---
-### 🎼 Script 1: SpotifyPlaylistReader.py
+### Script 1: SpotifyPlaylistReader.py
 
 **What it does:**
 - Authenticates with your Spotify account
@@ -39,7 +39,7 @@ Download FFmpeg from https://ffmpeg.org/download.html and add it to your system 
 - A Spotify Developer App → [ClientID & ClientSecret](https://developer.spotify.com/documentation/web-api/concepts/apps)
   - playlist-read-private scope
   - Redirect URI set to: http://127.0.0.1:8888/callback
-  - 👉 You'll be prompted to log in to Spotify the first time.
+  - You'll be prompted to log in to Spotify the first time.
  <br>
  <img width="2768" height="776" alt="image" src="https://github.com/user-attachments/assets/304f63a5-df57-4124-957d-8cf4c3433b80" />
 
@@ -52,7 +52,7 @@ Download FFmpeg from https://ffmpeg.org/download.html and add it to your system 
 
 <br>
 
-Change `line 115` to match the path you want to dowload the songs to: 
+Change `line 115` to match the path you want to download the songs to: 
 ```python
 def download_as_mp3(youtube_url, song_name, output_folder='[ADD YOUR PATH HERE]'):
     safe_filename = clean_filename(song_name)
@@ -72,7 +72,7 @@ def download_as_mp3(youtube_url, song_name, output_folder='/MyWindowsPC/Download
 <br>
 
 ---
-### 🏷️ Script 2: MP3TagEditor.py
+### Script 2: MP3TagEditor.py
 
 <br>
 
@@ -88,18 +88,17 @@ def download_as_mp3(youtube_url, song_name, output_folder='/MyWindowsPC/Download
 
 <br>
 
-📝 You'll be prompted to:
+You'll be prompted to:
 - Enter a folder path with your MP3s
 - Optionally enter album, artist, and genre names
 
 <br>
 
 ---
-#### 🚧 Notes
+#### Legal & Ethical concerns:
 - These scripts do not upload or re-host any copyrighted content.
 - Always check YouTube’s and Spotify’s terms of use.
 - **This project is intended for personal use only.**
 
 ---
-💡 Author
-Made by Giuliana E — frontend developer exploring Python 🐍
+Author: Giuliana E — frontend developer exploring Python 
