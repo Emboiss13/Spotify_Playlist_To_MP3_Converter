@@ -4,12 +4,12 @@ import os
 import re
 from spotipy.oauth2 import SpotifyOAuth
 
-# 🔓 Authentication ----------------------
-# These are the APP credentials I got from Spotify Developer
-# Note: 127.0.0.1 is just a universal loopback IP address, so it just means "this computer"
+
+
+# 🔓 Authenticate to Spotify Developer
 CLIENT_ID = 'id' # Replace with your Spotify Client ID
 CLIENT_SECRET = 'secret' # Replace with your Spotify Client Secret
-REDIRECT_URI = 'http://127.0.0.1:8888/callback'
+REDIRECT_URI = 'http://127.0.0.1:8888/callback' # DON'T CHANGE THIS (127.0.0.1 is just a universal loopback IP address, so it just means "this computer")
 SCOPE = 'playlist-read-private'
 
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
@@ -21,8 +21,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 
 
 
-
-# 🎼 Playlist MetaData ----------------------
+# Playlist Metadata
 playlists = sp.current_user_playlists()
 
 playlist_map = {
@@ -32,18 +31,19 @@ playlist_map = {
     } for playlist in playlists['items']
 }
 
-# 👤 User selection ----------------------
+
+
+# User selection
 print("\n🎵 YOUR SPOTIFY PLAYLISTS 🎧\n")
 for name in playlist_map.keys():
     print(f"- {name}")
 
-# Prompt user to choose one
+# Await user playlist selection
 selected_playlist = input("\nEnter the name of the playlist you want to convert to MP3 files: ").strip()
 
 
 
-
-# 🎵 Songs MetaData ----------------------
+# Songs Metadata
 def get_songs_from_playlist(sp, playlist_id):
     songs = []
     results = sp.playlist_items(playlist_id, fields='items.track.name,items.track.artists.name,next', additional_types=['track'])
@@ -64,7 +64,8 @@ def get_songs_from_playlist(sp, playlist_id):
     return songs
 
 
-# Getting selected playlists songs
+
+# Get the songs of selected playlist
 playlist_info = playlist_map.get(selected_playlist)
 
 if playlist_info:
@@ -77,8 +78,7 @@ else:
 
 
 
-
-# 📹 Searching for Youtube song ----------------------
+# Search for songs in youtube
 def search_youtube(query):
     ydl_opts = {
         'quiet': True,
@@ -100,8 +100,7 @@ print(f"\n🔍 Searching YouTube for tracks in '{selected_playlist}':\n")
 
 
 
-
-# 📹 Youtube to MP3 ----------------------
+# Converting youtube videos to MP3 files
 def clean_filename(name):
     return re.sub(r'[\\/*?:"<>|]', "", name)
 
@@ -129,7 +128,8 @@ def download_as_mp3(youtube_url, song_name, output_folder='[ADD YOUR PATH HERE]'
             print(f"❌ Failed to download {youtube_url}\nError: {e}")
 
 
-# 🎉 OUTPUT!!!--------------------------------------------------------
+
+# Downloading songs (output)
 for song in song_list:
     print(f"\n🔍 Searching YouTube for: {song}")
     url = search_youtube(song)
