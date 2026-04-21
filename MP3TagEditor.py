@@ -1,6 +1,8 @@
 import os
 from mutagen.easyid3 import EasyID3
 
+
+
 def tag_all_mp3s_in_folder(folder_path, album_name=None, artist_name=None, genre=None):
     for filename in os.listdir(folder_path):
         if filename.lower().endswith(".mp3"):
@@ -30,7 +32,8 @@ def tag_all_mp3s_in_folder(folder_path, album_name=None, artist_name=None, genre
             print(f"⏭️ Skipped (not mp3): {filename}")
 
 
-# ------------------ MAIN FUNCTION (User input is collected & cleaned) ------------------
+
+# Cleaning and collecting user input for MP3 tag editing
 if __name__ == "__main__":
     folder = input("📁 Enter path to folder with MP3s: ").strip()
     album = input("💽 Enter album name (optional): ").strip()
