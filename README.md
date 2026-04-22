@@ -67,7 +67,7 @@ def download_as_mp3(youtube_url, song_name, output_folder='/MyWindowsPC/Download
 
 
 ### ▶️ How to run:
-`python3 SpotifyPlaylistReader.py`
+Open a terminal in the folder where you've cloned this repo and run `python3 SpotifyPlaylistReader.py`
 
 <br>
 
@@ -84,7 +84,7 @@ def download_as_mp3(youtube_url, song_name, output_folder='/MyWindowsPC/Download
 <br>
 
 ### ▶️ How to run:
-`python3 MP3TagEditor.py`
+Open a terminal in the folder where you've cloned this repo and run `python3 MP3TagEditor.py`
 
 <br>
 
